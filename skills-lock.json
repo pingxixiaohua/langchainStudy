@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "skills": {
+    "css-animations": {
+      "source": "heygen-com/hyperframes",
+      "sourceType": "github",
+      "skillPath": "skills/css-animations/SKILL.md",
+      "computedHash": "df468749b06a8ec7369cfea69bf71bf65e46cfc376e837e439e26f4230852c6b"
+    },
+    "gsap": {
+      "source": "heygen-com/hyperframes",
+      "sourceType": "github",
+      "skillPath": "skills/gsap/SKILL.md",
+      "computedHash": "ef2658b3705d3fd5c8e38d197b31521553a0bee3b40bda2ab70bf22bd6b88854"
+    },
+    "hyperframes": {
+      "source": "heygen-com/hyperframes",
+      "sourceType": "github",
+      "skillPath": "skills/hyperframes/SKILL.md",
+      "computedHash": "f726a7478c7a3133e763c9af5f8ade12bc65dbdf32f09a854696ebabc68433a5"
+    },
+    "lottie": {
+      "source": "heygen-com/hyperframes",
+      "sourceType": "github",
+      "skillPath": "skills/lottie/SKILL.md",
+      "computedHash": "42174a1de29225618166626ed113bfd311a6b53083ddd514ab50991816f77b19"
+    },
+    "typegpu": {
+      "source": "heygen-com/hyperframes",
+      "sourceType": "github",
+      "skillPath": "skills/typegpu/SKILL.md",
+      "computedHash": "768a9b983ac79fc283307cdd39f262ab4da5deeb3726ec65252fb7b4bc04f779"
+    },
+    "waapi": {
+      "source": "heygen-com/hyperframes",
+      "sourceType": "github",
+      "skillPath": "skills/waapi/SKILL.md",
+      "computedHash": "a497e9e3f2ffc5a4c38cbfdd86ff60a23a872173cff0df9489ffa10c3d256744"
+    }
+  }
+}
