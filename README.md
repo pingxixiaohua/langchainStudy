@@ -28,6 +28,7 @@ DASHSCOPE_API_KEY=your_api_key
 
 ```
 ├── main.py                  # 入口文件
+├── langgraph.json           # LangGraph 部署配置（本地调试用）
 ├── part1_introduction/      # 入门教程（按序号递进）
 │   ├── 01_初始化模型.py      # 模型初始化（init_chat_model / ChatTongyi）
 │   ├── 02_调用模型.py        # invoke 与 stream 两种调用方式
@@ -42,7 +43,11 @@ DASHSCOPE_API_KEY=your_api_key
 │   ├── 11.langchain内部预设工具.py  # TavilySearch 等预置工具的使用
 │   ├── 12_短期记忆.py         # InMemorySaver 实现短期记忆
 │   ├── 13_短期记忆持久存储.py  # SqliteSaver 持久化存储会话状态
-│   └── 14_记忆管理策略.py     # SummarizationMiddleware 总结压缩会话
+│   ├── 14_记忆管理策略.py     # SummarizationMiddleware 总结压缩会话
+│   └── 15_综合构建一个智能体.py  # 综合实战，LangGraph Platform 部署 Agent
+├── pro_engineer/             # 实战项目
+│   └── agents/
+│       └── personal_chief.py # AI 私厨助手：多模态食材识别 + 食谱搜索 + 智能推荐
 └── resource/                 # 资源文件（SQLite checkpoint 数据库等）
 ```
 
@@ -64,6 +69,25 @@ DASHSCOPE_API_KEY=your_api_key
 | 12 | 短期记忆 | `AgentState` + `InMemorySaver`，`thread_id` 区分会话 |
 | 13 | 持久存储 | `SqliteSaver` 将 checkpoint 持久化到 SQLite |
 | 14 | 记忆管理 | `SummarizationMiddleware` 触发式总结，避免上下文超限 |
+| 15 | 综合实战 | 综合前面知识构建智能体，LangGraph Platform 托管部署 |
+
+## 实战项目
+
+### AI 私厨助手 (`pro_engineer/agents/personal_chief.py`)
+
+综合运用多模态模型、搜索引擎、Agent 开发的完整实战项目：
+
+1. **多模态识别** — 使用 `qwen3.6-plus` 识别用户提供的食材照片
+2. **智能检索** — 调用 TavilySearch 搜索适配食谱
+3. **多维度评估** — 从营养价值、制作难度对候选食谱量化打分排序
+4. **结构化输出** — 生成包含食谱信息、得分、推荐理由的报告
+
+通过 `langgraph.json` 配置部署到 LangGraph Platform，支持本地调试和 LangSmith 可观测性。
+
+```bash
+# 本地启动 LangGraph 调试服务器
+uvx langgraph dev --port 2024
+```
 
 ## 依赖
 
@@ -75,4 +99,5 @@ DASHSCOPE_API_KEY=your_api_key
 - **langgraph-checkpoint-sqlite** — SQLite checkpoint 持久化
 - **langchain-tavily** — Tavily 搜索工具
 - **dashscope** — 阿里云 DashScope（通义千问）
+- **langgraph-cli[inmem]** — LangGraph CLI 本地调试服务器
 - **openai** — OpenAI SDK

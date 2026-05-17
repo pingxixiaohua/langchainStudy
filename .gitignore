@@ -11,3 +11,9 @@ wheels/
 
 # Environment variables
 .env
+
+# LangGraph runtime data
+.langgraph_api/
+
+# Local databases
+resource/
